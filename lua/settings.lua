@@ -12,7 +12,7 @@ vim.wo.relativenumber = true --tambien relativos
 opt.hlsearch = false --no resaltar búsqueda
 opt.incsearch = false --no ir mostrando donde va acertando la búsqueda
 opt.inccommand = 'split' --splitear cuando haga commands, muy cheto queda
-opt.ignorecase = true --buscar case insensitive
+opt.ignorecase = true --buscar case insensitive por defecto
 opt.scrolloff = 10 --mantener 10 líneas entre el limite superior/inferior del buffer y el cursor
 opt.path:append { '**' } --buscar también en subfolders
 
@@ -32,6 +32,6 @@ opt.pumblend = 30 --supuestamente, opacidad de la autocompletion, ya veremos
 opt.list = true --mostrar caracteres invisibles, como espacios y tabs
 
 --tema clipboard
-opt.clipboard:prepend { 'unnamed', 'unnamedplus' }
+opt.clipboard:prepend { 'unnamed', 'unnamedplus' } --hay que revisarlo para linux
 
 --plugins config
