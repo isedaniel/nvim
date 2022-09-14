@@ -32,12 +32,16 @@ opt.pumblend = 30 --supuestamente, opacidad de la autocompletion, ya veremos
 opt.list = true --mostrar caracteres invisibles, como espacios y tabs
 
 --tema clipboard
-opt.clipboard:prepend { 'unnamed', 'unnamedplus' } --hay que revisarlo para linux
+opt.clipboard:prepend { 'unnamed', 'unnamedplus' } --que comparta clipboard con el sistema
 
 --plugins config
+--theme config
 require("catppuccin").setup()
 vim.cmd [[colorscheme catppuccin]]
+vim.cmd [[:hi Normal guibg=NONE]]
 --vim.cmd[[colorscheme tokyonight]]
+
+--lualine config
 require('lualine').setup {
   options = {
     icons_enabled = true,
