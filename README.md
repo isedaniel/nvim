@@ -1,2 +1,2 @@
 # nvim
-nvim .config files
+~/.config/nvim files
