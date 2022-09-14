@@ -35,3 +35,12 @@ opt.list = true --mostrar caracteres invisibles, como espacios y tabs
 opt.clipboard:prepend { 'unnamed', 'unnamedplus' } --hay que revisarlo para linux
 
 --plugins config
+require("catppuccin").setup()
+vim.cmd [[colorscheme catppuccin]]
+--vim.cmd[[colorscheme tokyonight]]
+require('lualine').setup {
+  options = {
+    icons_enabled = true,
+    theme = auto,
+  }
+}
