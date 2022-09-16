@@ -37,10 +37,9 @@ opt.clipboard:prepend { 'unnamed', 'unnamedplus' } --que comparta clipboard con 
 --plugins config
 --theme config
 require("catppuccin").setup()
-vim.cmd [[colorscheme catppuccin]]
+--vim.cmd [[colorscheme catppuccin]]
+vim.cmd[[colorscheme tokyonight]]
 vim.cmd [[:hi Normal guibg=NONE]] --no background
---vim.cmd[[colorscheme tokyonight]]
-
 --lualine config
 require('lualine').setup {
   options = {
