@@ -35,15 +35,37 @@ opt.list = true --mostrar caracteres invisibles, como espacios y tabs
 opt.clipboard:prepend { 'unnamed', 'unnamedplus' } --que comparta clipboard con el sistema
 
 --plugins config
+
 --theme config
-require("catppuccin").setup()
---vim.cmd [[colorscheme catppuccin]]
-vim.cmd[[colorscheme tokyonight]]
-vim.cmd [[:hi Normal guibg=NONE]] --no background
+--require("tokyonight").setup({
+--  styles = {
+--    comments = { italic=false },
+--    keywords = { italic=false },
+--  }
+--})
+vim.cmd[[colorscheme darcula]]
+--vim.cmd[[:hi Normal guibg=NONE]] --no background
+
 --lualine config
-require('lualine').setup {
-  options = {
-    icons_enabled = true,
-    theme = auto,
+--require('lualine').setup {
+--  options = {
+--    icons_enabled = true,
+--    theme = auto,
+--  }
+--}
+
+--treesitter config
+local configs = require'nvim-treesitter.configs'
+configs.setup {
+  ensure_installed = { "c", "lua", "python", "javascript" },
+  highlight = {
+    enable = true,
+  },
+  indent = {
+    enable = true,
   }
 }
+
+--lsp installer configuration
+require("mason").setup()
+require("mason-lspconfig").setup()
