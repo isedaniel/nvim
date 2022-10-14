@@ -1,6 +1,5 @@
 --aliases
 local cmd = vim.cmd
-local fn = vim. fn
 local g = vim.g
 local opt = vim.opt
 local wo = vim.wo
@@ -17,7 +16,6 @@ configs.setup {
     "go",
     "typescript",
     "html",
-    "css",
   },
   highlight = {
     enable = true,

@@ -1,4 +1,6 @@
+--aliases
 local keymap = vim.keymap
+local g = vim.g
 
 --keymaps
 g.mapleader = ' '                       --<space> as mapleader
