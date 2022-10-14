@@ -1,23 +1,41 @@
-vim.cmd [[packadd packer.nvim]]
+-- packer bootstrap
+local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 
-return require('packer').startup(function(use)
+if fn.empty(fn.glob(install_path)) > 0 then
+  packer_bootstrap = fn.system({
+    'git',
+    'clone',
+    '--depth', '1',
+    'https://github.com/wbthomason/packer.nvim',
+    install_path
+  })
+end
 
-  use 'wbthomason/packer.nvim' --packer
-  use { "catppuccin/nvim", as = "catppuccin" } --catpuccin theme
-  use 'folke/tokyonight.nvim' --TOKYOOO
-  use 'doums/darcula' --jetbrains darcula theme
-  use { --lualine
-    'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  }
+--cargar plugins
+require('packer').startup(function(use)
+  --el propio packer
+  use 'wbthomason/packer.nvim'
+
+  --treesitter
   use {
-    'nvim-treesitter/nvim-treesitter', --text highlighting
+    'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   }
+
+  --theme
   use {
-    "williamboman/mason.nvim", --installer for lsp
-    "williamboman/mason-lspconfig.nvim", --integration between mason and lspconfig
-    "neovim/nvim-lspconfig", --language server protocol configuration plugin
+    'briones-gabriel/darcula-solid.nvim',
+    requires = 'rktjmp/lush.nvim'
   }
+
+  --LSP
+  use {
+    'neovim/nvim-lspconfig'
+  }
+
+  --para packer bootstrap
+  if packer_bootstrap then
+    require('packer').sync()
+  end
 end)
 
