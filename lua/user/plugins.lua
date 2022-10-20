@@ -1,7 +1,7 @@
 --aliases
-local fn = vim. fn
+local fn = vim.fn
 
---packer bootstrap
+--packer bootstrap(si no está, instala packer)
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 
 if fn.empty(fn.glob(install_path)) > 0 then
@@ -12,14 +12,46 @@ if fn.empty(fn.glob(install_path)) > 0 then
     'https://github.com/wbthomason/packer.nvim',
     install_path
   })
+  print 'Installing Packer, please close and reopen Neovim'
+  vim.cmd [[packadd packer.nvim]]
 end
 
+-- autocommand que reloadea nvim cuando guardas plugins.lua
+vim.cmd [[
+  augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost plugins.lua source <afile> | PackerSync
+  augroup end
+]]
+
+-- llamado protegido (protected call)
+-- en lugar de hacer require('packer')
+-- se usa pcall (protected call) y se captura el error si falla
+local status_ok, packer = pcall(require, 'packer')
+if not status_ok then
+  return
+end
+
+-- que packer use una ventana propia
+packer.init {
+  display = {
+    open_fn = function()
+      return require('packer.util').float { border = "rounded" }
+    end,
+  },
+}
+
 --cargar plugins
-require('packer').startup(function(use)
-  --el propio packer
+return packer.startup(function(use)
+  -- Plugins a cargar
+  -- Packer
   use 'wbthomason/packer.nvim'
 
-  --treesitter
+  -- varios plugins dependen de estos dos
+  use 'nvim-lua/popup.nvim' -- implementación de Popup API
+  use 'nvim-lua/plenary.nvim' -- funciones útiles de lua usadas en varios plugins
+
+  -- Treesitter
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
