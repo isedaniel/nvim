@@ -32,3 +32,9 @@ keymap.set('v', '<A-j>', ':m .-2<CR>==', opts)
 
 --no yankear cuando le pegas algo encima a otra cosa
 keymap.set('v', 'p', '"_dP', opts)
+
+--mover texto arriba y abajo también cuando se elige en bloque
+keymap.set("x", "J", ":move '>+1<CR>gv-gv", opts)
+keymap.set("x", "K", ":move '<-2<CR>gv-gv", opts)
+keymap.set("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
+keymap.set("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
