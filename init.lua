@@ -1,3 +1,3 @@
-require 'plugins'
-require 'options'
-require 'keymaps'
+require 'user.plugins'
+require 'user.options'
+require 'user.keymaps'
