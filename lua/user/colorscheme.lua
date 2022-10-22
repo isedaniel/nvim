@@ -9,6 +9,8 @@ if not status_ok then
   return
 end
 
+return
+
 -- define the customize specs
 local specs = lush.extends({darcula_solid}).with(function()
   return {
