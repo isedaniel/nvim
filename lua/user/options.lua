@@ -25,9 +25,6 @@ configs.setup {
   }
 }
 
---theme config
-cmd[[colorscheme darcula-solid]]
-
 --lsp config
 
 

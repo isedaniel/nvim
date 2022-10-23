@@ -58,10 +58,7 @@ return packer.startup(function(use)
   }
 
   --theme
-  use {
-    'briones-gabriel/darcula-solid.nvim',
-    requires = 'rktjmp/lush.nvim'
-  }
+  use 'folke/tokyonight.nvim'
 
   --LSP
   use {
