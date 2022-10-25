@@ -51,9 +51,10 @@ opt.softtabstop = 2                                     --espacios por los que c
 opt.smartindent = true                                  --pequeñas reglas que ayudan a la indentación
 opt.wrap = false                                        --no hacer wrap de línea
 opt.termguicolors = true                                --más colores en terminal
-opt.pumblend = 30                                       --opacidad de autocmp
+opt.pumblend = 5                                        --opacidad de autocmp
+opt.pumheight = 10                                      --popup menu height
 opt.list = true                                         --mostrar espacios y tabs
-opt.clipboard:prepend { 'unnamed' , 'unnamedplus' }     --compartir clipboard con sistema
+opt.clipboard = 'unnamedplus'                           --compartir clipboard con sistema
 opt.mouse = 'nv'                                        --mouse en modo normal y visual
 opt.splitbelow = true                                   --nueva ventana horizontal por abajo
 opt.splitright = true                                   --nueva ventana vertical por la derecha

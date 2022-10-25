@@ -60,6 +60,17 @@ return packer.startup(function(use)
   --theme
   use 'folke/tokyonight.nvim'
 
+  --autocmp
+  use 'hrsh7th/nvim-cmp'         --completion plugin
+  use 'hrsh7th/cmp-buffer'       --buffer completion
+  use 'hrsh7th/cmp-path'         --path completion
+  use 'hrsh7th/cmp-cmdline'      --cmdline completion
+  use 'saadparwaiz1/cmp_luasnip' --snippet completion
+
+  --snippets
+  use 'L3MON4D3/LuaSnip'             --snippet engine
+  use 'rafamadriz/friendly-snippets' --bunch of snippets to use
+
   --LSP
   use {
     'neovim/nvim-lspconfig'
