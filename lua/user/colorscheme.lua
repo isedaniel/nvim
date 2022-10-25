@@ -1,4 +1,7 @@
--- make protected calls
+-- set colorscheme
+local colorscheme = 'tokyonight'
+
+-- make protected call for config tokyonight
 local status_ok, tokyonight = pcall(require, 'tokyonight')
 if not status_ok then
   return
@@ -38,4 +41,9 @@ tokyonight.setup({
   on_highlights = function(highlights, colors) end,
 })
 
-vim.cmd[[colorscheme tokyonight]]
+--set the colorscheme with a pcall
+local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
+if not status_ok then
+  vim.notify("colorscheme '" .. colorscheme .. "' not found")
+  return
+end
