@@ -66,15 +66,20 @@ return packer.startup(function(use)
   use 'hrsh7th/cmp-path'         --path completion
   use 'hrsh7th/cmp-cmdline'      --cmdline completion
   use 'saadparwaiz1/cmp_luasnip' --snippet completion
+  use "hrsh7th/cmp-nvim-lsp"     --lsp completion
 
   --snippets
   use 'L3MON4D3/LuaSnip'             --snippet engine
   use 'rafamadriz/friendly-snippets' --bunch of snippets to use
 
   --LSP
-  use {
-    'neovim/nvim-lspconfig'
-  }
+  use "neovim/nvim-lspconfig"             --enable LSP
+  use "williamboman/mason.nvim"           --simple to use language server installer
+  use "williamboman/mason-lspconfig.nvim" --simple to use language server installer
+
+  --Telescope
+  use 'nvim-telescope/telescope.nvim' --Telescope plugin
+  use 'nvim-telescope/telescope-media-files.nvim' --plugin for Telescope
 
   --para packer bootstrap
   if packer_bootstrap then
