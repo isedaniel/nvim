@@ -64,4 +64,8 @@ opt.conceallevel = 0                                    --mostrar `` en markdown
 opt.showtabline = 2                                     --mostrar pestañas abiertas
 opt.undofile = true                                     --undo persistente
 opt.signcolumn = "yes"                                  --mostrar columna a la izquierda siempre
+cmd [[
+  set guicursor=i:ver1
+  set guicursor+=a:blinkon1
+]]                                                      --enable cursor blinking
 
