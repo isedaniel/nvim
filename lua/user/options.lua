@@ -69,3 +69,4 @@ cmd [[
   set guicursor+=a:blinkon1
 ]]                                                      --enable cursor blinking
 
+-- a little change
