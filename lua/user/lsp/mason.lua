@@ -5,6 +5,7 @@ local servers = {
   "jsonls",
   "html",
   "tsserver",
+  "clangd",
 }
 
 --set some settings
