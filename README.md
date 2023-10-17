@@ -1,2 +1,3 @@
 # nvim
-~/.config/nvim files
+
+These are my neovim config files.
