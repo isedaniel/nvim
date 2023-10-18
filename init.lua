@@ -154,6 +154,9 @@ require('lazy').setup({
     'catppuccin/nvim',
     priority = 1000,
     config = function()
+      require('catppuccin').setup {
+        no_italic = true,
+      }
       vim.cmd.colorscheme 'catppuccin'
       vim.cmd.hi 'Normal guibg=NONE ctermbg=NONE'
     end,
