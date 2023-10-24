@@ -181,7 +181,7 @@ require('lazy').setup({
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help ibl`
     main = 'ibl',
-    opts = {},
+    opts = {scope = {enabled = false}},
   },
 
   -- "gc" to comment visual regions/lines
@@ -251,7 +251,7 @@ vim.o.mouse = 'a'
 -- vim.o.clipboard = 'unnamedplus'
 
 -- Enable break indent
-vim.o.breakindent = true
+-- vim.o.breakindent = true
 
 -- Save undo history
 vim.o.undofile = true
