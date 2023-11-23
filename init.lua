@@ -151,14 +151,15 @@ require('lazy').setup({
   },
 
   {
-    'catppuccin/nvim',
+    'rose-pine/neovim',
+    name = 'rose-pine',
     priority = 1000,
     config = function()
-      require('catppuccin').setup {
-        no_italic = true,
+      require('rose-pine').setup {
+        disable_italics = true,
       }
-      vim.cmd.colorscheme 'catppuccin'
-      vim.cmd.hi 'Normal guibg=NONE ctermbg=NONE'
+      vim.cmd.colorscheme 'rose-pine'
+      --vim.cmd.hi 'Normal guibg=NONE ctermbg=NONE'
     end,
   },
 
