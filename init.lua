@@ -254,6 +254,11 @@ vim.o.mouse = 'a'
 -- Enable break indent
 -- vim.o.breakindent = true
 
+-- My options
+-- Enable autoindenting
+vim.o.smartindent = true
+-- My options ending
+
 -- Save undo history
 vim.o.undofile = true
 
