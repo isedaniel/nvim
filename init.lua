@@ -279,6 +279,9 @@ vim.o.completeopt = 'menuone,noselect'
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
 
+-- Set color on column 80
+vim.o.colorcolumn = "80"
+
 -- [[ Basic Keymaps ]]
 
 -- Keymaps for better default experience
