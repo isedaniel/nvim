@@ -151,12 +151,15 @@ require('lazy').setup({
   },
 
   {
+    -- theme settings
     'rose-pine/neovim',
     name = 'rose-pine',
     priority = 1000,
     config = function()
       require('rose-pine').setup {
-        disable_italics = true,
+        styles = {
+          italic = false,
+        }
       }
       vim.cmd.colorscheme 'rose-pine'
       --vim.cmd.hi 'Normal guibg=NONE ctermbg=NONE'
