@@ -260,6 +260,8 @@ vim.o.mouse = 'a'
 -- My options
 -- Enable autoindenting
 vim.o.smartindent = true
+vim.o.shiftwidth = 4
+vim.o.tabstop = 4
 -- My options ending
 
 -- Save undo history
