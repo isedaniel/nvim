@@ -4,12 +4,11 @@
 -- NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
 
+-- package manager
+require('config.lazy')
 
 -- [[ Setting options ]] See `:h vim.o`
 -- For more options `:help option-list`
-
--- use powershell instead of cmd
-vim.o.shell = 'powershell'
 
 -- Print the line number in front of each line
 vim.o.number = true
@@ -86,7 +85,4 @@ end, { desc = 'Print the git blame for the current line' })
 -- For example, to add the "nohlsearch" package to automatically turn off search highlighting after
 -- 'updatetime' and when going to insert mode
 vim.cmd('packadd! nohlsearch')
-
--- package manager
-require('config.lazy')
 
